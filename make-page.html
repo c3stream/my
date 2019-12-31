@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap"
+        crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="./assets/css/base.css" rel="stylesheet">
+    <title>GitHub PagesでHP作ってみよう | My Page</title>
+</head>
+
+<body>
+    <section class="t-nav text-body wf-notosansjapanese"><a href="./menu.html">他のページもみる？</a></section>
+
+    <section class="text-body wf-notosansjapanese">
+        <h1>GitHub PagesでHPを作ってみよう</h1>
+        <p>GitHub PagesでHP作ってみよう作ってみましょう。<br>GitHub Pagesのサイト <a href="https://pages.github.com/"
+                title="GitHup Pages https://pages.github.com/" target="_blank" rel="noopener
+                    noreferrer">https://pages.github.com/</a>
+            <br>GitHub PagesのHelp <a href="https://help.github.com/ja/github/working-with-github-pages"
+                title="Working with GitHub Pages https://help.github.com/ja/github/working-with-github-pages"
+                target="_blank" rel="noopener
+                    noreferrer">https://help.github.com/ja/github/working-with-github-pages</a>
+
+        </p>
+    </section>
+    <section class="text-body wf-notosansjapanese">
+        <h2>GitHub Pagesってなに？</h2>
+        <p>GitHub Pagesは静的なサイトをホスティングするサービスです。
+            HTML, CSS, JavaScriptなど。
+            GitHub のワークフローなどを用いいてサイトを作成することができます。
+            必要に合わせてカスタムのドメインを当てることもできます。
+            <br>GitHub Pagesのサンプル <a href="https://github.com/collections/github-pages-examples"
+                title="GitHub Pages examples https://github.com/collections/github-pages-examples" target="_blank" rel="noopener
+                    noreferrer">https://github.com/collections/github-pages-examples</a>
+            <br>GitHub Pagesでカスタムドメインを使う <a
+                href="https://help.github.com/en/articles/using-a-custom-domain-with-github-pages" title="Using a custom domain with GitHub Pages.
+                    https://help.github.com/en/articles/using-a-custom-domain-with-github-pages" target="_blank" rel="noopener
+                    noreferrer">https://help.github.com/ja/articles/using-a-custom-domain-with-github-pages</a>
+            <br>GitHub Pages について<a
+                href="https://help.github.com/ja/github/working-with-github-pages/about-github-pages">https://help.github.com/ja/github/working-with-github-pages/about-github-pages</a>
+        </p>
+    </section>
+    <section class="text-body wf-notosansjapanese">
+        <h2>GitHub Pages の使用料金</h2>
+        <p>アカウントがあれば無料で作成できます。制約はあるので公式ページのHelpから「GitHub Pages について」をよく熟読ください。
+        </p>
+    </section>
+    <section class="text-body wf-notosansjapanese">
+        <h2>GitHub Pages 注意点・警告</h2>
+        <div class="warning">
+            <p> <strong>Warning</strong>: GitHub Pages sites are publicly available on the internet, even if their
+                repositories are private. If you have sensitive data in your site's repository, you may want to remove
+                it before publishing.</p>
+        </div>
+        <div class="warning">
+            <p> <strong>警告</strong>: GitHub Pages
+                サイトは、リポジトリがプライベートであっても、インターネット上で公開されています。サイトのリポジトリに機密データがある場合は、公開する前に削除することを予めおこなってください。</p>
+        </div>
+
+    </section>
+    <section class="text-body wf-notosansjapanese">
+        <h2>GitHub Pages でページをつくってみましょう</h2>
+        <p>1. GitHub に登録してなければアカウントを作りましょう。</p>
+        <p>2. GitHub Pagesを作りましょう <a
+                href="https://help.github.com/ja/github/working-with-github-pages/creating-a-github-pages-site">https://help.github.com/ja/github/working-with-github-pages/creating-a-github-pages-site</a>
+            <br>GitHub でプロジェクトを作ります。この時Public:公開状態で作る必要があります。</p>
+
+        作ったプロジェクトをcloneする<br>
+        <code>
+            git clone https://github.com/{{アカウント名}}/{{プロジェクト名}}
+        </code><br>
+        cloneしてきたプロジェクトのディレクトリに移動する<br>
+        <code>
+            cd {{プロジェクト名}}
+        </code><br>
+        index.html に内容を書き込む<br>
+        <code>
+            echo "Hello World" > index.html
+        </code><br>
+        Gitリポジトリに含める<br>
+        <code>
+            git add index.html
+        </code><br>
+        Gitリポジトリにコミットする<br>
+        <code>
+            git commit -a -m "{{コミットメッセージ}}"
+        </code><br>
+        GitHubリポジトリにプッシュする : gh-pages ブランチにプッシュすることになります<br>
+        <code>
+            git push origin gh-pages
+        </code><br>
+        作成コード全体<br>
+        <code>
+            git clone https://github.com/{{アカウント名}}/{{プロジェクト名}}<br>
+            cd {{プロジェクト名}}<br>
+            echo "Hello World" > index.html<br>
+            git add index.html<br>
+            git commit -a -m "{{コミットメッセージ}}"<br>
+            git push origin gh-pages<br>
+        </code>
+        <p>3. GitHub Pagesを更新していく</p>
+        新たなファイルがある場合はGitリポジトリに含める<br>
+        <code>
+            git add {{新たなファイルの名前:新規公開物ある場合}}
+        </code><br>
+        Gitリポジトリにコミットする<br>
+        <code>
+            git commit -a -m "{{コミットメッセージ}}"
+        </code><br>
+        GitHubリポジトリにプッシュする : gh-pages ブランチにプッシュ<br>
+        <code>
+            git push origin gh-pages
+        </code><br>
+        作業コード全体<br>
+        <code>
+            git add {{新たなファイルの名前:新規公開物ある場合}}<br>
+            git commit -a -m "{{コミットメッセージ}}"<br>
+            git push origin gh-pages<br>
+        </code>
+    </section>
+    <section class="text-body wf-notosansjapanese">
+        <h2>もっと詳しく</h2>
+        <p>GitHub Pagesはjekillというページ作成のフレームワークよって提供されています。<br>
+            jekillのドキュメントをよく熟読して試してみることでさらに高度なページを作成することができるでしょう。<br>
+            jekill (JP)<a
+                href="http://jekyllrb-ja.github.io/docs/github-pages/">http://jekyllrb-ja.github.io/docs/github-pages/</a>
+            <br>jekill (EN)<a
+                href="http://jekyllrb.github.io/docs/github-pages/">http://jekyllrb.github.io/docs/github-pages/</a>
+            <br>GitHub PagesとJekyllについて<a
+                href="https://help.github.com/ja/github/working-with-github-pages/about-github-pages-and-jekyll">https://help.github.com/ja/github/working-with-github-pages/about-github-pages-and-jekyll</a>
+            <br>GitHub PagesのHelp <a href="https://help.github.com/en/github/working-with-github-pages"
+                title="Working with GitHub Pages https://help.github.com/ja/github/working-with-github-pages"
+                target="_blank" rel="noopener
+                    noreferrer">https://help.github.com/ja/github/working-with-github-pages</a>
+        </p>
+    </section>
+    <section class="t-nav text-body wf-notosansjapanese"><a href="./menu.html">他のページもみる？</a></section>
+
+    </article>
+</body>
+
+</html>
