@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap"
+        crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="./assets/css/base.css" rel="stylesheet">
+    <title>Twitter Card を使ってみよう | My Page</title>
+</head>
+
+<body>
+    <article>
+
+        <section class="t-nav text-body wf-notosansjapanese"><a href="./menu.html">他のページもみる？</a></section>
+
+        <section class="text-body wf-notosansjapanese">
+            <h1>Twitter Card を使ってみよう</h1>
+            <p>Twitter Card を使ってみましょう。Twitter Cardを使うことによってあなたのコンテンツをTwitterに拡散する時に魅力を伝えるために役に立ちます。
+                <br>Twitter Card の説明ページ <a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards" title="Optimize Tweets with Cards | Overview
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards</a>
+                <br>Optimize Tweets with Cards | Guide<a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started"
+                    title="Optimize Tweets with Cards | Guide
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started</a>
+
+                <br>Card Troubleshooting Guide <a href="https://developer.twitter.com/cards/troubleshooting"
+                    title="Card Troubleshooting Guide https://developer.twitter.com/cards/troubleshooting"
+                    target="_blank" rel="noopener
+                    noreferrer">https://developer.twitter.com/cards/troubleshooting</a>
+            </p>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Twitter Card とは？</h2>
+            <p>Twitterのアプリがリンク先の内容を読み取り、ツイートの付加コンテンツとして写真やテキスト、動画やApple Store、Google Play
+                Storeなどへのリンク、動画のプレイヤーなどを生成して貼り付けてくれます。
+                <br>タイプとしては現在は4種類あります。
+            </p>
+            <dl>
+                <dt>Summary Card</dt>
+                <dd>
+                    1:1 で中央基準で切り抜かれる小さめの正方形画像と文章が並んだものが表示されます。文章としては大体70文字程度が表示されます。
+                </dd>
+                <dt>Summary Card with Large Image</dt>
+                <dd>
+                    1.91:1(2:1) で中央基準で切り抜かれる大きめの長方形画像と文章が表示されます。文章としては大体60文字強程度が表示されます。
+                </dd>
+                <dt>App Card</dt>
+                <dd>
+                    アプリのアイコンや説明やレート、ダウンロードリンクが表示されます。
+                </dd>
+                <dt>Player Card</dt>
+                <dd>
+                    動画を表示できます。
+                </dd>
+            </dl>
+            <p>目的に合わせてツイッターカードを使うことでさらに記事やコンテンツに対して興味を持つ人が増えることでしょう。</p>
+            <p>Twitter CardはOpen Graph Protocolを使用しています。</p>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h1>Twitter Card の制限など</h1>
+            <p>Twitter Card の制限はTwitterのポリシーや規約に準拠した利用の範囲で使用するようにしてください。
+                <br>Twitter Card の説明ページ <a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards" title="Optimize Tweets with Cards | Overview
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards</a>
+                <br>Optimize Tweets with Cards | Guide<a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started"
+                    title="Optimize Tweets with Cards | Guide
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started</a>
+
+                <br>Twitter Developer Policy <a href="https://developer.twitter.com/overview/terms/policy"
+                    title="Twitter Developer Policy https://developer.twitter.com/overview/terms/policy" target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/overview/terms/policy</a>
+            </p>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Summary Card を使ってみよう</h2>
+            <p>Summary Card を使ってみましょう。
+                <br>Summary Card<a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary" title="Summary Card
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary" target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary</a>
+
+            </p>
+            <p>以下のコードをhtml head内に埋め込みます</p>
+            <code>
+                &lt;meta name="twitter:card" content="summary"><br>
+                &lt;meta name="twitter:site" content="{{ユーザーネーム}}"><br>
+                &lt;meta name="twitter:site:id" content="{{ユーザーID}}"><br>
+                &lt;meta name="twitter:creator" content="{{作者のユーザーネーム}}"><br>
+                &lt;meta name="twitter:creator:id" content="{{作者のユーザーID}}"><br>
+                &lt;meta name="twitter:title" content="{{タイトル}}"><br>
+                &lt;meta name="twitter:description" content="{{説明文}}"><br>
+                &lt;meta name="twitter:image" content="{{画像URL}}"><br>
+                &lt;meta name="twitter:image:alt" content="{{画像の代替テキスト}}"><br>
+            </code>
+            <p>それぞれのmetaタグを解説します。</p>
+            <dl>
+                <dt>
+                    twitter:card
+                </dt>
+                <dd>
+                    カードの種類を設定します。Summary Cardでは"summary"と設定しましょう。この設定は必須です。
+                </dd>
+                <dt>
+                    twitter:site
+                </dt>
+                <dd>
+                    ユーザーの@から始まるTwitter名を入力します。なるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:site:id
+                </dt>
+                <dd>
+                    ユーザーのIDを入力します。twitter:siteと合わせてなるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:creator
+                </dt>
+                <dd>
+                    作者のユーザーネームを入力します。ユーザーネームとコンテンツ自体の作者が異なる場合に使用します。
+                </dd>
+
+                <dt>
+                    twitter:creator:id
+                </dt>
+                <dd>
+                    作者のユーザーのIDを入力します。ユーザーIDとコンテンツ自体の作者が異なる場合に使用します。
+                </dd>
+                <dt>
+                    twitter:title
+                </dt>
+                <dd>
+                    コンテンツのタイトルを入力します。
+                </dd>
+                <dt>
+                    twitter:description
+                </dt>
+                <dd>
+                    コンテンツの説明を入力します。<br>
+                    twitter:title　を設定している場合Android, iOSアプリからは表示されません。
+                </dd>
+                <dt>
+                    twitter:image
+                </dt>
+                <dd>
+                    画像のURL。サイトのロゴやコンテンツのサムネイルを設定します。<br>
+                    表示される画像:1:1 最小:144×144 最大:4096x4096 容量:5MB以下 画像種類:JPEG,WEBP,GIF,PNG<br>
+                    HTTPS
+                </dd>
+                <dt>
+                    twitter:image:alt
+                </dt>
+                <dd>
+                    目の見えない方向けに画像の説明を最大420文字設定できます。
+                </dd>
+            </dl>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Summary Card with Large Image を使ってみよう</h2>
+            <p>Summary Card with Large Image
+                を使ってみましょう。
+                <br>Summary Card with Large Image<a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image"
+                    title="Summary Card with Large Image
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image</a>
+
+            </p>
+            <p>以下のコードをhtml head内に埋め込みます</p>
+            <code>
+                &lt;meta name="twitter:card" content="summary_large_image"><br>
+                &lt;meta name="twitter:site" content="{{ユーザーネーム}}"><br>
+                &lt;meta name="twitter:site:id" content="{{ユーザーID}}"><br>
+                &lt;meta name="twitter:creator" content="{{作者のユーザーネーム}}"><br>
+                &lt;meta name="twitter:creator:id" content="{{作者のユーザーID}}"><br>
+                &lt;meta name="twitter:title" content="{{タイトル}}"><br>
+                &lt;meta name="twitter:description" content="{{説明文}}"><br>
+                &lt;meta name="twitter:image" content="{{画像URL}}"><br>
+                &lt;meta name="twitter:image:alt" content="{{画像の代替テキスト}}"><br>
+            </code>
+            <p>それぞれのmetaタグを解説します。</p>
+            <dl>
+                <dt>
+                    twitter:card
+                </dt>
+                <dd>
+                    カードの種類を設定します。Summary Card with Large Imageでは"summary_large_image"と設定しましょう。この設定は必須です。
+                </dd>
+                <dt>
+                    twitter:site
+                </dt>
+                <dd>
+                    ユーザーの@から始まるTwitter名を入力します。なるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:site:id
+                </dt>
+                <dd>
+                    ユーザーのIDを入力します。twitter:siteと合わせてなるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:creator
+                </dt>
+                <dd>
+                    作者のユーザーネームを入力します。ユーザーネームとコンテンツ自体の作者が異なる場合に使用します。
+                </dd>
+
+                <dt>
+                    twitter:creator:id
+                </dt>
+                <dd>
+                    作者のユーザーのIDを入力します。ユーザーIDとコンテンツ自体の作者が異なる場合に使用します。
+                </dd>
+
+                <dt>
+                    twitter:title
+                </dt>
+                <dd>
+                    コンテンツのタイトルを入力します。
+                </dd>
+                <dt>
+                    twitter:description
+                </dt>
+                <dd>
+                    コンテンツの説明を入力します。<br>
+                    twitter:title　を設定している場合Android, iOSアプリからは表示されません。
+                </dd>
+                <dt>
+                    twitter:image
+                </dt>
+                <dd>
+                    画像のURL。コンテンツのサムネイルを設定します。<br>
+                    表示される画像:1:1 最小:144×144 最大:4096x4096 容量:5MB以下 画像種類:JPEG,WEBP,GIF,PNG<br>
+                    HTTPS
+                </dd>
+                <dt>
+                    twitter:image:alt
+                </dt>
+                <dd>
+                    目の見えない方向けに画像の説明を最大420文字設定できます。
+                </dd>
+            </dl>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>App Card を使ってみよう</h2>
+            <p>App Cardを使ってみましょう。
+                <br>App Card<a href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/app-card"
+                    title="App Card
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/app-card" target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/app-card</a>
+            </p>
+            <p>以下のコードをhtml head内に埋め込みます</p>
+            <code>
+                &lt;meta name="twitter:card" content="app"><br>
+                &lt;meta name="twitter:site" content="{{ユーザーネーム}}"><br>
+                &lt;meta name="twitter:description" content="{{説明文}}"><br>
+                &lt;meta name="twitter:app:country" content="{{国コード}}"><br>
+                &lt;meta name="twitter:app:name:iphone" content="{{アプリ名}}"><br>
+                &lt;meta name="twitter:app:id:iphone" content="{{アプリID}}"><br>
+                &lt;meta name="twitter:app:url:iphone" content="{{カスタムURLスキーマ}}"><br>
+                &lt;meta name="twitter:app:name:ipad" content="{{ipadのアプリ名}}"><br>
+                &lt;meta name="twitter:app:id:ipad" content="{{ipadのアプリID}}"><br>
+                &lt;meta name="twitter:app:url:ipad" content="{{ipadのカスタムURLスキーマ}}"><br>
+                &lt;meta name="twitter:app:name:googleplay" content="{{google playでのアプリ名}}"><br>
+                &lt;meta name="twitter:app:id:googleplay" content="{{google playでのアプリのid}}"><br>
+                &lt;meta name="twitter:app:url:googleplay" content="{{google playのアプリのURL}}”><br>
+            </code>
+            <p>それぞれのmetaタグを解説します。</p>
+            <dl>
+                <dt>
+                    twitter:card
+                </dt>
+                <dd>
+                    カードの種類を設定します。App Cardでは"app"と設定しましょう。この設定は必須です。
+                </dd>
+                <dt>
+                    twitter:site
+                </dt>
+                <dd>
+                    ユーザーの@から始まるTwitter名を入力します。なるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:site:id
+                </dt>
+                <dd>
+                    ユーザーのIDを入力します。twitter:siteと合わせてなるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:description
+                </dt>
+                <dd>
+                    アプリの説明を入力します。最大200文字入力できます。
+                </dd>
+                <dt>
+                    twitter:app:country
+                </dt>
+                <dd>
+                    アプリがアメリカのApp Storeに販売されない場合は国コードを記述します。
+                    ISO 3166-1 alpha-2 日本 JP https://www.iso.org/obp/ui/#search
+                </dd>
+                <dt>
+                    twitter:app:name:iphone
+                </dt>
+                <dd>
+                    iPhone などのスレート端末に対応する場合 アプリ名を入力します。
+                </dd>
+                <dt>
+                    twitter:app:id:iphone
+                </dt>
+                <dd>
+                    iPhone などのスレート端末に対応する場合アプリIDを入力します。
+                </dd>
+                <dt>
+                    twitter:app:url:iphone
+                </dt>
+                <dd>
+                    iPhone などのスレート端末に対応する場合とアプリのカスタムスキームが存在する場合 :// を含む形でカスタムスキームを設定します。
+                </dd>
+                <dt>
+                    twitter:app:name:ipad
+                </dt>
+                <dd>
+                    iPad 端末に対応する場合アプリ名を入力します。
+                </dd>
+                <dt>
+                    twitter:app:id:ipad
+                </dt>
+                <dd>
+                    iPad 端末に対応する場合アプリIDを入力します。
+                </dd>
+                <dt>
+                    twitter:app:url:ipad
+                </dt>
+                <dd>
+                    iPad 端末に対応する場合とアプリのカスタムスキームが存在する場合 :// を含む形でカスタムスキームを設定します。
+                </dd>
+                <dt>
+                    twitter:app:name:googleplay
+                </dt>
+                <dd>
+                    Android 端末に対応する場合アプリ名を入力します。
+                </dd>
+                <dt>
+                    twitter:app:id:googleplay
+                </dt>
+                <dd>
+                    Android 端末に対応する場合アプリIDを入力します。
+                </dd>
+                <dt>
+                    twitter:app:url:googleplay
+                </dt>
+                <dd>
+                    Android 端末に対応する場合とアプリのカスタムスキームが存在する場合 :// を含む形でカスタムスキームを設定します。
+                </dd>
+            </dl>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Player Card を使ってみよう</h2>
+            <p>Player
+                Cardを使ってみましょう。
+                <br>Player Card<a
+                    href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/player-card" title="Player Card
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/player-card"
+                    target="_blank"
+                    rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/player-card</a>
+            </p>
+            <p>以下のコードをhtml head内に埋め込みます</p>
+            <code>
+                &lt;meta name="twitter:card" content="player"><br>
+                &lt;meta name="twitter:site" content="{{ユーザーネーム}}"><br>
+                &lt;meta name="twitter:title" content="{{タイトル}}"><br>
+                &lt;meta name="twitter:description" content="{{説明文}}"><br>
+                &lt;meta name="twitter:player" content="{{video, audioタグが設置されたURL}}"><br>
+                &lt;meta name="twitter:player:stream" content="{{ストリームURL}}"><br>
+                &lt;meta name="twitter:player:stream:content_type" content="{{ストリームのメディアタイプです}}"><br>
+                &lt;meta name="twitter:player:width" content="{{プレーヤーの幅}}"><br>
+                &lt;meta name="twitter:player:height" content="{{プレーヤーの高さ}}"><br>
+                &lt;meta name="twitter:image" content="{{画像URL}}"><br>
+                &lt;meta name="twitter:image:alt" content="{{画像の代替テキスト}}"><br>
+            </code>
+            <p>それぞれのmetaタグを解説します。</p>
+            <dl>
+                <dt>
+                    twitter:card
+                </dt>
+                <dd>
+                    カードの種類を設定します。App Cardでは"app"と設定しましょう。この設定は必須です。
+                </dd>
+                <dt>
+                    twitter:site
+                </dt>
+                <dd>
+                    ユーザーの@から始まるTwitter名を入力します。なるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:site:id
+                </dt>
+                <dd>
+                    ユーザーのIDを入力します。twitter:siteと合わせてなるべく記入すべきです。
+                </dd>
+                <dt>
+                    twitter:description
+                </dt>
+                <dd>
+                    アプリの説明を入力します。最大200文字入力できます。
+                </dd>
+                <dt>
+                    twitter:player
+                </dt>
+                <dd>
+                    videoタグ、audioタグが設置されたページのURLを入力します。twitterアプリのiframeで動作します。<br>
+                    プレーヤーのサンプル Twitter Cards Getting Started Bundle
+                    https://github.com/twitterdev/cards-player-samples<br>
+                    HTTPS
+                </dd>
+                <dt>
+                    twitter:player:stream
+                </dt>
+                <dd>
+                    ストリーミング配信をする場合はストリーミング配信用のURLを設定します。<br>
+                    https://twittercommunity.com/search?q=player%3Astream<br>
+                    HTTPS
+                </dd>
+                <dt>
+                    twitter:player:stream:content_type
+                </dt>
+                <dd>
+                    ストリーム配信のメディアタイプを入力します。
+                    https://twittercommunity.com/search?q=player%3Astream%3Acontent_type
+                </dd>
+                <dt>
+                    twitter:player:width
+                </dt>
+                <dd>
+                    iPhone などのスレート端末に対応する場合とアプリのカスタムスキームが存在する場合 :// を含む形でカスタムスキームを設定します。
+                </dd>
+                <dt>
+                    witter:player:height
+                </dt>
+                <dd>
+                    iPad 端末に対応する場合アプリ名を入力します。
+                </dd>
+                <dt>
+                    twitter:image
+                </dt>
+                <dd>
+                    画像のURL。コンテンツのサムネイルを設定します。<br>
+                    最小:144×144 最大:4096x4096 容量:5MB以下 画像種類:JPEG,WEBP,GIF,PNG<br>
+                    表示される画像: x:y 68,600 ピクセルより少なければよい。 262x262 1:1 や 350x196 16:9<br>
+                    HTTPS
+                </dd>
+                <dt>
+                    twitter:image:alt
+                </dt>
+                <dd>
+                    目の見えない方向けに画像の説明を最大420文字設定できます。
+                </dd>
+            </dl>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Twitter Cards and Open Graph</h2>
+            <p>Twitter Cards と Open Graph Protcol を交えた書き方</p>
+            <p>Summary Cardの場合</p>
+            <code>
+                &lt;html prefix="og: http://ogp.me/ns#" prefix="twitter: http://ogp.me/ns#"><br>
+                &lt;head><br>
+                &lt;title>{{タイトル}}&lt;title><br>
+                &lt;meta name="description" content="{{説明文}}" />
+                &lt;meta name="twitter:card" content="summary"><br>
+                &lt;meta name="twitter:site" content="{{ユーザーネーム}}"><br>
+                &lt;meta name="twitter:site:id" content="{{ユーザーID}}"><br>
+                &lt;meta name="twitter:creator" content="{{作者のユーザーネーム}}"><br>
+                &lt;meta name="twitter:creator:id" content="{{作者のユーザーID}}"><br>
+                &lt;meta property="og:type" content="{{website や articleなど}}" />
+                &lt;meta name="og:url" content="{{サイトや記事のURL}}"><br>
+                &lt;meta name="og:title" content="{{タイトル}}"><br>
+                &lt;meta name="og:description" content="{{説明文}}"><br>
+                &lt;meta name="og:image" content="{{画像URL}}"><br>
+                &lt;meta name="og:image:alt" content="{{画像の代替テキスト}}"><br>
+            </code>
+            <br>Twitter Cards and Open Graph <a
+                href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#twitter-cards-and-open-graph"
+                title="Twitter Cards and Open Graph
+                https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#twitter-cards-and-open-graph"
+                target="_blank"
+                rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#twitter-cards-and-open-graph</a>
+
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Twitter Cardを確認する</h2>
+            <p>Card Validatorを使用しTwitter投稿前に確認することができます。</p>
+            <p>内容が誤っている場合もCard Validatorを使用します。Twitterでは7日間キャッシュが保存されますが、それを削除します。</p>
+            <br>Card Validator <a href="https://cards-dev.twitter.com/validator"
+                title="Card Validator https://cards-dev.twitter.com/validator" target="_blank" rel="noopener
+                    noreferrer">https://cards-dev.twitter.com/validator</a>
+
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>もっと詳しく</h2>
+            Twitter Card の説明ページ <a
+                href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards" title="Optimize Tweets with Cards | Overview
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards"
+                target="_blank"
+                rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards</a>
+            <br>Optimize Tweets with Cards | Guide<a
+                href="https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started" title="Optimize Tweets with Cards | Guide
+                    https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started"
+                target="_blank"
+                rel="noopener
+                    noreferrer">https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started</a>
+            <br>Card Troubleshooting Guide <a href="https://developer.twitter.com/cards/troubleshooting"
+                title="Card Troubleshooting Guide https://developer.twitter.com/cards/troubleshooting" target="_blank"
+                rel="noopener
+                    noreferrer">https://developer.twitter.com/cards/troubleshooting</a>
+            <br>Card Validator <a href="https://cards-dev.twitter.com/validator"
+                title="Card Validator https://cards-dev.twitter.com/validator" target="_blank" rel="noopener
+                    noreferrer">https://cards-dev.twitter.com/validator</a>
+            <br>App Installs and Deep-Linking <a
+                href="https://developer.twitter.com/cards/app-installs-and-deep-linking"
+                title="App Installs and Deep-Linking https://developer.twitter.com/cards/app-installs-and-deep-linking"
+                target="_blank" rel="noopener
+                    noreferrer">https://developer.twitter.com/cards/app-installs-and-deep-linking</a>
+            <br>Twitter Card Forums <a href="https://twittercommunity.com/category/cards"
+                title="Twitter Card Forums https://twittercommunity.com/category/cards" target="_blank" rel="noopener
+                    noreferrer">https://twittercommunity.com/category/cards</a>
+            <br>Twitter を学ぶコンテンツ <a href="https://www.twitterflightschool.com/student/catalog"
+                title="Twitter を学ぶコンテンツ https://www.twitterflightschool.com/student/catalog" target="_blank" rel="noopener
+                    noreferrer">https://www.twitterflightschool.com/student/catalog</a>
+            <br>Twitter Developer Policy <a href="https://developer.twitter.com/overview/terms/policy"
+                title="Twitter Developer Policy https://developer.twitter.com/overview/terms/policy" target="_blank"
+                rel="noopener
+                    noreferrer">https://developer.twitter.com/overview/terms/policy</a>
+            <br>Twitter にコンタクトをとる　<a href="https://help.twitter.com/contact-us"
+                title="Twitter にコンタクトをとる https://help.twitter.com/contact-us" target="_blank" rel="noopener
+                    noreferrer">https://help.twitter.com/contact-us</a>
+        </section>
+    </article>
+</body>
+
+</html>

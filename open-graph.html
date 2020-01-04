@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap"
+        crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="./assets/css/base.css" rel="stylesheet">
+    <title>Open Graph Protocol とは？ | My Page</title>
+</head>
+
+<body>
+    <article>
+
+        <section class="t-nav text-body wf-notosansjapanese"><a href="./menu.html">他のページもみる？</a></section>
+
+
+        <section class="text-body wf-notosansjapanese">
+            <h1>Open Graph Protocol とは？</h1>
+            <p>Open Graph ProtocolとはもともとFacebookで作成され、
+                以下のものに触発されています。
+                <br>Dublin Core <a href="https://en.wikipedia.org/wiki/Dublin_Core"
+                    title="Dublin Core https://en.wikipedia.org/wiki/Dublin_Core" target="_blank" rel="noopener
+                    noreferrer">https://en.wikipedia.org/wiki/Dublin_Core</a>
+                <br>link-rel canonical
+                <a href="https://webmasters.googleblog.com/2009/02/specify-your-canonical.html" title="link-rel canonical
+                        https://webmasters.googleblog.com/2009/02/specify-your-canonical.html" target="_blank" rel="noopener
+                    noreferrer">https://webmasters.googleblog.com/2009/02/specify-your-canonical.html</a>
+                <br>Microformats
+                <a href="http://microformats.org/" title="Microformats http://microformats.org/" target="_blank" rel="noopener
+                    noreferrer">http://microformats.org/</a>
+                <br>RDFa <a href="https://en.wikipedia.org/wiki/RDFa" title="RDFa https://en.wikipedia.org/wiki/RDFa"
+                    target="_blank" rel="noopener
+                    noreferrer">https://en.wikipedia.org/wiki/RDFa</a>
+            </p>
+            <p>基本的な設置</p>
+            <code>
+                &lt;html prefix="og: http://ogp.me/ns#"><br>
+                &lt;head><br>
+                &lt;title>{{タイトル}}&lt;title><br>
+                &lt;meta property="og:title" content="{{タイトル}}" /><br>
+                &lt;meta property="og:description" content="{{説明}}" /><br>
+                &lt;meta property="og:type" content="{{コンテンツのタイプ}}" /><br>
+                &lt;meta property="og:url" content="{{サイト}}" /><br>
+                &lt;meta property="og:image" content="{{画像}}" /><br>
+            </code>
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>Open Graph の設置を確認する</h2>
+            <p>Open Graph Debuggerを使用し投稿前に確認することができます。</p>
+            <p>内容が誤っている場合もOpen Graph Debuggerを使用します。キャッシュを削除します。</p>
+            <br>Open Graph Debugger - Facebook Developers<a href="https://developers.facebook.com/tools/debug/"
+                title="The Open Graph protocol https://developers.facebook.com/tools/debug/" target="_blank" rel="noopener
+                    noreferrer">https://developers.facebook.com/tools/debug/</a>
+
+        </section>
+        <section class="text-body wf-notosansjapanese">
+            <h2>もっと詳しく</h2>
+            The Open Graph protocol <a href="https://ogp.me/" title="The Open Graph protocol https://ogp.me/"
+                target="_blank" rel="noopener
+                    noreferrer">https://ogp.me/</a>
+            <br>The Open Graph protocol (JP)<a
+                href="https://www.translatetheweb.com/?ref=TAns&from=&to=ja&a=https://ogp.me/"
+                title="The Open Graph protocol https://www.translatetheweb.com/?ref=TAns&from=&to=ja&a=https://ogp.me/"
+                target="_blank" rel="noopener
+                    noreferrer">https://www.translatetheweb.com/?ref=TAns&from=&to=ja&a=https://ogp.me/</a>
+            <br>Open Graph Debugger - Facebook Developers<a href="https://developers.facebook.com/tools/debug/"
+                title="The Open Graph protocol https://developers.facebook.com/tools/debug/" target="_blank" rel="noopener
+                    noreferrer">https://developers.facebook.com/tools/debug/</a>
+            <br>OGP画像シミュレータ<a href="http://ogimage.tsmallfield.com/"
+                title="The Open Graph protocol http://ogimage.tsmallfield.com/" target="_blank" rel="noopener
+                    noreferrer">http://ogimage.tsmallfield.com/</a>
+            <br>Google リッチ スニペット テスト ツール<a href="https://search.google.com/structured-data/testing-tool/u/0/"
+                title="Google リッチ スニペット テスト ツール< https://search.google.com/structured-data/testing-tool/u/0/"
+                target="_blank" rel="noopener
+                    noreferrer">https://search.google.com/structured-data/testing-tool/u/0/</a>
+            <br>OGPにつけるprefix属性とは何か調べてみた。<a href="https://qiita.com/t-fujio/items/8a237494498f42591b36"
+                title="OGPにつけるprefix属性とは何か調べてみた。 https://qiita.com/t-fujio/items/8a237494498f42591b36" target="_blank"
+                rel="noopener
+                    noreferrer">https://qiita.com/t-fujio/items/8a237494498f42591b36</a>
+            <br>HTML5でOGP設定する際に注意したいxmlns属性とprefix属性<a
+                href="https://search.google.com/structured-data/testing-tool/u/0/"
+                title="HTML5でOGP設定する際に注意したいxmlns属性とprefix属性 http://05step.com/2012/11/25/ogp-html5/" target="_blank"
+                rel="noopener
+                    noreferrer">http://05step.com/2012/11/25/ogp-html5/</a>
+            <br>OGP タグの設定方法<a href="https://hirashimatakumi.com/blog/3049.html"
+                title="OGP タグの設定方法 https://hirashimatakumi.com/blog/3049.html" target="_blank" rel="noopener
+                    noreferrer">https://hirashimatakumi.com/blog/3049.html</a>
+
+        </section>
+    </article>
+</body>
+
+</html>
