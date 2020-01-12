@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes" />
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preload" type="text/css" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap"
+        crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="./assets/css/base.css" rel="stylesheet">
+    <title>文字列を逆さまにする</title>
+    <link href="./assets/app/css/mirror-string.css" rel="stylesheet">
+    <script src="./assets/app/js/mirror-string.js"></script>
+</head>
+
+<body>
+    <article>
+
+        <section class="text-body wf-notosansjapanese">
+            <h1>文字を逆さまにする</h1>
+            <div class="c3stream-app">
+                <div id="mirror-string">
+                    <textarea placeholder="逆さまにしたい文字列を入れる" rows="1" cols="20" id="input-string"></textarea>
+                    <button type="button" id="mirror-button">↓↓逆さまにする↓↓</button>
+                    <textarea placeholder="結果表示" rows="1" cols="20" id="result-string" readonly></textarea>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-body wf-notosansjapanese">
+            <h2>code</h2>
+
+            <p>HTML</p>
+            <code>
+                &lt;div class="c3stream-app"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;div id="mirror-string"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea placeholder="逆さまにしたい文字列を入れる" rows="1"
+                cols="20"<br>
+                id="moto-string">&lt;/textarea><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button type="button"
+                id="mirror-button">↓↓逆さまにする↓↓&lt;/button><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea placeholder="結果表示" rows="1" cols="20"
+                id="saki-string"
+                readonly><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;textarea><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div><br>
+                &lt;/div><br>
+            </code>
+            <p>CSS</p>
+            <code>
+                textarea {<br>
+                &nbsp;&nbsp;&nbsp;display: block;<br>
+                &nbsp;&nbsp;&nbsp;width: calc(100% - 2rem);<br>
+                &nbsp;&nbsp;&nbsp;height: 8rem;<br>
+                &nbsp;&nbsp;&nbsp;font-size: 2rem;<br>
+                &nbsp;&nbsp;&nbsp;padding: 0.5rem 1rem;<br>
+                &nbsp;&nbsp;&nbsp;margin: 1rem auto;<br>
+                }<br>
+                <br>
+                button {<br>
+                &nbsp;&nbsp;&nbsp;display: block;<br>
+                &nbsp;&nbsp;&nbsp;width: 20rem;<br>
+                &nbsp;&nbsp;&nbsp;height: 3rem;<br>
+                &nbsp;&nbsp;&nbsp;font-size: 1.5rem;<br>
+                &nbsp;&nbsp;&nbsp;padding: 0.5rem 1rem;<br>
+                &nbsp;&nbsp;&nbsp;margin: 1rem auto;<br>
+                }<br>
+            </code>
+            <p>JavaScript</p>
+            <code>
+                'use strict';<br>
+                var C3STREAM_APP = C3STREAM_APP || {};<br>
+                C3STREAM_APP.MIRROR_STRING = {};<br>
+                (function (_) {<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;const inputTextID = "input-string";<br>
+                &nbsp;&nbsp;&nbsp;const resultTextID = "result-string";<br>
+                &nbsp;&nbsp;&nbsp;const mirrorButtonID = "mirror-button";<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;const mirrorString = async () => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var input = document.getElementById(inputTextID).value;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = document.getElementById(resultTextID);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await (() =><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.value =
+                Array.prototype.reverse.call(Array.from(input)).join('')<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)(input, result);<br>
+                &nbsp;&nbsp;&nbsp; };<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;const clickMirrorString = event => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mirrorString();<br>
+                &nbsp;&nbsp;&nbsp;};<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;const initResulitString = object => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (typeof object === 'undefined' || typeof object === 'Object' ||
+                object.getElementById !== resultTextID) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result =
+                document.getElementById(resultTextID);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.value = "";<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.value = "";<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;};<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;_.setMirrorStringButton = event => {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString()<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var mirrorButton = document.getElementById(mirrorButtonID);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mirrorButton.removeEventListener("click", clickMirrorString);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mirrorButton.addEventListener("click", clickMirrorString);<br>
+                &nbsp;&nbsp;&nbsp;};<br>
+                &nbsp;&nbsp;&nbsp;})(C3STREAM_APP.MIRROR_STRING);<br>
+                window.addEventListener("DOMContentLoaded", C3STREAM_APP.MIRROR_STRING.setMirrorStringButton);
+            </code>
+        </section>
+
+        <section class="text-body wf-notosansjapanese">
+            <h2>参照</h2>
+            <ul>
+                <li>textarea | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea</a>
+                </li>
+                <li>HTMLTextAreaElement | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement</a>
+                </li>
+                <li>button | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button</a>
+                </li>
+                <li>onload | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload"
+                        target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload</a>
+                </li>
+                <li>addEventListener | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"
+                        target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener</a>
+                </li>
+                <li>type | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/type" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/Event/type</a>
+                </li>
+                <li>Events | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/Events</a>
+                </li>
+                <li>load_event | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event" target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event</a>
+                </li>
+                <li>String | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a>
+                </li>
+                <li>
+                    Unexpected type | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Unexpected_type"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Unexpected_type</a>
+                </li>
+                <li> async function | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function</a>
+                </li>
+                <li> Arrow functions | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions</a>
+                </li>
+                <li>
+                    Array from | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from</a>
+
+                </li>
+                <li>Array join | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join</a>
+                </li>
+                <li>Strict mode | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode"
+                        target="_blank" rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</a>
+                </li>
+                <li>Introduction to Object-Oriented JavaScript | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript</a>
+                </li>
+
+
+
+        </section>
+        <section class="t-nav text-body wf-notosansjapanese"><a href="./menu.html">他のページもみる？</a></section>
+
+    </article>
+</body>
+
+</html>
