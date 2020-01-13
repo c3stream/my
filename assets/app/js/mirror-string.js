@@ -1,7 +1,7 @@
 "use strict";
 var C3STREAM_APP = C3STREAM_APP || {};
 C3STREAM_APP.MIRROR_STRING = {};
-(function(_) {
+(_ => {
   const inputTextID = "input-string";
   const resultTextID = "result-string";
   const mirrorButtonID = "mirror-button";
@@ -23,7 +23,7 @@ C3STREAM_APP.MIRROR_STRING = {};
   const initResulitString = object => {
     if (
       typeof object === "undefined" ||
-      typeof object === "Object" ||
+      typeof object !== "object" ||
       object.getElementById !== resultTextID
     ) {
       var result = document.getElementById(resultTextID);

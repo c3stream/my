@@ -74,7 +74,7 @@
                 'use strict';<br>
                 var C3STREAM_APP = C3STREAM_APP || {};<br>
                 C3STREAM_APP.MIRROR_STRING = {};<br>
-                (function (_) {<br>
+                (_ => {<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;const inputTextID = "input-string";<br>
                 &nbsp;&nbsp;&nbsp;const resultTextID = "result-string";<br>
@@ -95,7 +95,7 @@
                 &nbsp;&nbsp;&nbsp;};<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;const initResulitString = object => {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (typeof object === 'undefined' || typeof object === 'Object' ||
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (typeof object === 'undefined' || typeof object === 'object' ||
                 object.getElementById !== resultTextID) {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result =
                 document.getElementById(resultTextID);<br>
@@ -144,6 +144,12 @@
                 <li>type | MDN
                     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/type" target="_blank" rel="noopener
                         noreferrer">https://developer.mozilla.org/en-US/docs/Web/API/Event/type</a>
+                </li>
+                <li>typeof | MDN
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof"
+                        target="_blank"
+                        rel="noopener
+                        noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof</a>
                 </li>
                 <li>Events | MDN
                     <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener
