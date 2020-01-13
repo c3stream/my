@@ -9,7 +9,7 @@ C3STREAM_APP.MIRROR_STRING = {};
   const mirrorString = async () => {
     var input = document.getElementById(inputTextID).value;
     var result = document.getElementById(resultTextID);
-    initResulitString();
+    initResulitString(result);
     await (() =>
       (result.value = Array.prototype.reverse
         .call(Array.from(input))

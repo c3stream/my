@@ -83,7 +83,7 @@
                 &nbsp;&nbsp;&nbsp;const mirrorString = async () => {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var input = document.getElementById(inputTextID).value;<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = document.getElementById(resultTextID);<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString(result);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await (() =><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.value =
                 Array.prototype.reverse.call(Array.from(input)).join('')<br>
