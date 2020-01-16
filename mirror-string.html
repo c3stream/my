@@ -81,8 +81,8 @@
                 &nbsp;&nbsp;&nbsp;const mirrorButtonID = "mirror-button";<br>
                 <br>
                 &nbsp;&nbsp;&nbsp;const mirrorString = async () => {<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var input = document.getElementById(inputTextID).value;<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = document.getElementById(resultTextID);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var input = window.document.getElementById(inputTextID).value;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result = window.document.getElementById(resultTextID);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString(result);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;await (() =><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.value =
@@ -107,12 +107,13 @@
                 <br>
                 &nbsp;&nbsp;&nbsp;_.setMirrorStringButton = event => {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;initResulitString()<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var mirrorButton = document.getElementById(mirrorButtonID);<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var mirrorButton =
+                window.document.getElementById(mirrorButtonID);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mirrorButton.removeEventListener("click", clickMirrorString);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mirrorButton.addEventListener("click", clickMirrorString);<br>
                 &nbsp;&nbsp;&nbsp;};<br>
                 &nbsp;&nbsp;&nbsp;})(C3STREAM_APP.MIRROR_STRING);<br>
-                window.addEventListener("DOMContentLoaded", C3STREAM_APP.MIRROR_STRING.setMirrorStringButton);
+                window.addEventListener("load", C3STREAM_APP.MIRROR_STRING.setMirrorStringButton);
             </code>
         </section>
 

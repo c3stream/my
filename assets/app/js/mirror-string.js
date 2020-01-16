@@ -7,8 +7,8 @@ C3STREAM_APP.MIRROR_STRING = {};
   const mirrorButtonID = "mirror-button";
 
   const mirrorString = async () => {
-    var input = document.getElementById(inputTextID).value;
-    var result = document.getElementById(resultTextID);
+    var input = window.document.getElementById(inputTextID).value;
+    var result = window.document.getElementById(resultTextID);
     initResulitString(result);
     await (() =>
       (result.value = Array.prototype.reverse
@@ -26,7 +26,7 @@ C3STREAM_APP.MIRROR_STRING = {};
       typeof object !== "object" ||
       object.getElementById !== resultTextID
     ) {
-      var result = document.getElementById(resultTextID);
+      var result = window.document.getElementById(resultTextID);
       result.value = "";
     } else {
       object.value = "";
@@ -35,12 +35,12 @@ C3STREAM_APP.MIRROR_STRING = {};
 
   _.setMirrorStringButton = event => {
     initResulitString();
-    var mirrorButton = document.getElementById(mirrorButtonID);
+    var mirrorButton = window.document.getElementById(mirrorButtonID);
     mirrorButton.removeEventListener("click", clickMirrorString);
     mirrorButton.addEventListener("click", clickMirrorString);
   };
 })(C3STREAM_APP.MIRROR_STRING);
 window.addEventListener(
-  "DOMContentLoaded",
+  "load",
   C3STREAM_APP.MIRROR_STRING.setMirrorStringButton
 );
