@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.wf-notosansjapanese {
+    font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック Medium", YuGothic, YuGothicM, "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.license {
+    width: calc(100% - 3rem);
+    max-width: calc(37rem + 4.81rem);
+    font-weight: 400;
+    font-size: 0.433rem;
+    line-height: 0.55rem;
+    letter-spacing: 0.1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
