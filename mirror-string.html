@@ -98,7 +98,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (typeof object === 'undefined' || typeof object === 'object' ||
                 object.getElementById !== resultTextID) {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var result =
-                document.getElementById(resultTextID);<br>
+                window.document.getElementById(resultTextID);<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.value = "";<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;object.value = "";<br>
