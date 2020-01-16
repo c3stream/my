@@ -14,9 +14,9 @@ pre {
     width: calc(100% - 3rem);
     max-width: calc(37rem + 4.81rem);
     font-weight: 400;
-    font-size: 0.433rem;
-    line-height: 0.55rem;
-    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.13rem;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-all;
