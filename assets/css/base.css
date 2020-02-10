@@ -35,7 +35,7 @@ code {
 }
 */
 
-@import url("/assets/css/fitting/base_fitting.css");
+@import url("fitting/base_fitting.css");
 
 body {
     margin: 0;
