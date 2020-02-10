@@ -1,0 +1,38 @@
+.text-body {
+	width: calc(100% - 3rem * 1.472000);
+	max-width: calc((37rem + 3rem) * 1.472000);
+	font-weight: 400;
+	font-size: calc(1rem * 1.472000);
+	line-height: calc(1.5rem * 1.472000);
+	letter-spacing: calc(0.13rem * 1.472000);
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	margin: 0 auto;
+	padding: calc(1.5rem * 1.472000);
+	padding-top: calc(0.5rem * 1.472000);
+	padding-bottom: calc(0.5rem * 1.472000);
+}
+h1 {
+	font-size: calc(2rem * 1.472000);
+	line-height: calc(2rem * 1.472000);
+}
+h2 {
+	font-size: calc(1.6rem * 1.472000);
+	line-height: calc(1.6rem * 1.472000);
+}
+section {
+	margin: 0;
+	margin-top: calc(0.5rem * 1.472000) 0;
+	margin-bottom: calc(0.5rem * 1.472000) 0;
+	padding: 0;
+}
+code {
+	display: inline-block;
+	font-size: calc(0.8rem * 1.472000);
+	padding: 0;
+	padding-left: calc(1.5rem * 1.472000);
+	padding-right: calc(0.5rem * 1.472000);
+}
+
+

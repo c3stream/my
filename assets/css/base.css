@@ -1,3 +1,42 @@
+/*
+.text-body {
+    width: calc(100% - 3rem);
+    max-width: calc(37rem + 3rem);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.13rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+section {
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+code {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0 0 0.5rem 1.5rem;
+}
+*/
+
+@import url("/assets/css/fitting/base_fitting.css");
+
 body {
     margin: 0;
 }
@@ -10,19 +49,19 @@ pre {
     white-space: pre-wrap;
 }
 
-.text-body {
-    width: calc(100% - 3rem);
-    max-width: calc(37rem + 4.81rem);
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    letter-spacing: 0.13rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-all;
-    margin: 0 auto;
-    padding: 1.5rem;
+
+
+table {
+    border-width: 0;
+    border-spacing: 0.2em;
+    border-collapse: collapse;
 }
+
+td {
+    padding: 0;
+}
+
+
 
 .t-nav {
     text-align: end;
@@ -43,32 +82,13 @@ ul.second {
     padding: 0 0 0 2rem;
 }
 
-code {
-    display: inline-block;
-    font-size: 0.8rem;
-    padding: 0 0 0.5rem 1.5rem;
-}
-
-
-section {
-    margin: 0.5rem 0;
-    padding: 0;
-}
 
 h1,
 h2 {
     font-weight: bold;
 }
 
-h1 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-}
 
-h2 {
-    font-size: 1.6rem;
-    line-height: 2rem;
-}
 
 .warning {
     background-color: #ffdce0 !important;
