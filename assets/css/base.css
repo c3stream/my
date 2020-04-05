@@ -49,6 +49,25 @@ pre {
     white-space: pre-wrap;
 }
 
+.text-body {
+    font-weight: 400;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin: 0 auto;
+}
+
+
+section {
+    margin-top: calc(0.5rem * 0.010000) 0;
+    margin-bottom: calc(0.5rem * 0.010000) 0;
+}
+
+code {
+    display: inline-block;
+    padding: 0;
+}
+
 
 
 table {

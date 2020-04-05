@@ -1,14 +1,9 @@
 .text-body {
 	width: calc(100% - 3rem * 0.320000);
 	max-width: calc((37rem + 3rem) * 0.320000);
-	font-weight: 400;
 	font-size: calc(1rem * 0.320000);
 	line-height: calc(1.5rem * 0.320000);
 	letter-spacing: calc(0.13rem * 0.320000);
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	word-break: break-all;
-	margin: 0 auto;
 	padding: calc(1.5rem * 0.320000);
 	padding-top: calc(0.5rem * 0.320000);
 	padding-bottom: calc(0.5rem * 0.320000);
@@ -22,15 +17,11 @@ h2 {
 	line-height: calc(2rem * 0.320000);
 }
 section {
-	margin: 0;
 	margin-top: calc(0.5rem * 0.320000) 0;
 	margin-bottom: calc(0.5rem * 0.320000) 0;
-	padding: 0;
 }
 code {
-	display: inline-block;
 	font-size: calc(0.8rem * 0.320000);
-	padding: 0;
 	padding-left: calc(1.5rem * 0.320000);
 	padding-right: calc(0.5rem * 0.320000);
 }

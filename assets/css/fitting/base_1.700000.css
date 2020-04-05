@@ -1,14 +1,9 @@
 .text-body {
 	width: calc(100% - 3rem * 1.140000);
 	max-width: calc((37rem + 3rem) * 1.140000);
-	font-weight: 400;
 	font-size: calc(1rem * 1.140000);
 	line-height: calc(1.5rem * 1.140000);
 	letter-spacing: calc(0.13rem * 1.140000);
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-	word-break: break-all;
-	margin: 0 auto;
 	padding: calc(1.5rem * 1.140000);
 	padding-top: calc(0.5rem * 1.140000);
 	padding-bottom: calc(0.5rem * 1.140000);
@@ -28,9 +23,7 @@ section {
 	padding: 0;
 }
 code {
-	display: inline-block;
 	font-size: calc(0.8rem * 1.140000);
-	padding: 0;
 	padding-left: calc(1.5rem * 1.140000);
 	padding-right: calc(0.5rem * 1.140000);
 }
