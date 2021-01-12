@@ -107,6 +107,9 @@ h2 {
     font-weight: bold;
 }
 
+dt {
+    font-weight: bolder;
+}
 
 
 .warning {
